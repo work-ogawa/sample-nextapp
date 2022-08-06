@@ -18,7 +18,6 @@ const HomePage: NextPage<HomePageProps> = ({
 }: HomePageProps) => {
   // 商品カードカルーセルをレンダリング
   const renderProductCardCarousel = (products: Product[]) => {
-    console.log("HomePageコンポーネントの描画で呼ばれたログ.");
     return (
       <ProductCardCarousel>
         {products.map((p: Product, i: number) => (
