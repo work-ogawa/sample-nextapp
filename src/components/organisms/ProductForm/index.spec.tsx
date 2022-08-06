@@ -52,7 +52,9 @@ describe('ProductForm', () => {
       const inputPasswordNode = screen.getByPlaceholderText(
         /最高の商品です/,
       ) as HTMLInputElement
-      fireEvent.change(inputPasswordNode, { target: { value: 'テストテスト' } })
+      fireEvent.change(inputPasswordNode, {
+        target: { value: 'テストテスト' },
+      })
 
       // 価格を入力
       const inputPriceNode = screen.getByPlaceholderText(

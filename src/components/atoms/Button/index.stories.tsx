@@ -1,4 +1,4 @@
-import { ComponentMeta, ComponentStory } from "@storybook/react";
+import { ComponentMeta, ComponentStory } from '@storybook/react'
 import Button from './index'
 
 export default {
@@ -66,4 +66,3 @@ Secondary.args = { variant: 'secondary', children: 'Secondary Button' }
 // 無効化ボタン
 export const Disabled = Template.bind({})
 Disabled.args = { disabled: true, children: 'Disabled Button' }
-
