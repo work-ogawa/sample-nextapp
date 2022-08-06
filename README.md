@@ -712,7 +712,13 @@ Container ComponentのProductFormContainerは、商品情報を入力し、
 - アクセシビリティ
 - セキュリティ
 
+# Stripe
 
+## Stripeライブラリインストール
+
+```markdown
+npm install stripe @stripe/stripe-js axios
+```
 
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
