@@ -1,22 +1,22 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   reactStrictMode: true,
-  swcMinify: true,
   compiler: (() => {
-    let compileConfig = {
+    let compilerConfig = {
       // styledComponentsの有効化
-      styledComponents: true
+      styledComponents: true,
     }
+
     if (process.env.NODE_ENV === 'production') {
-      compileConfig = {
-        ...compileConfig,
+      compilerConfig = {
+        ...compilerConfig,
         // 本番環境ではReact Testing Libraryで使用するdata-testid属性を削除
-        reactRemoveProperties: { properties: ['^data-testids$']}
+        reactRemoveProperties: { properties: ['^data-testid$'] },
       }
     }
-    return compileConfig
+
+    return compilerConfig
   })(),
-  // 追加
   async rewrites() {
     return [
       {
