@@ -1,3 +1,4 @@
+/* eslint-disable prettier/prettier */
 import { loadStripe } from '@stripe/stripe-js'
 import axios from 'axios'
 
