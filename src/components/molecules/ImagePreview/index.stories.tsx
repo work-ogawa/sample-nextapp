@@ -2,7 +2,7 @@ import { ComponentMeta, ComponentStory } from '@storybook/react'
 import React, { useState, useEffect } from 'react'
 import styled from 'styled-components'
 import ImagePreview from './'
-import Dropzone from '../../../components/molecules/Dropzone'
+import Dropzone from 'components/molecules/Dropzone'
 
 export default {
   title: 'Molecules/ImagePreview',

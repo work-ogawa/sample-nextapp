@@ -1,9 +1,9 @@
 import Link from 'next/link'
 import styled from 'styled-components'
-import { GitHubIcon } from '../../../components/atoms/IconButton'
-import Text from '../../../components/atoms/Text'
-import Box from '../../../components/layout/Box'
-import Flex from '../../../components/layout/Flex'
+import { GitHubIcon } from 'components/atoms/IconButton'
+import Text from 'components/atoms/Text'
+import Box from 'components/layout/Box'
+import Flex from 'components/layout/Flex'
 
 const Anchor = styled(Text)`
   cursor: pointer;

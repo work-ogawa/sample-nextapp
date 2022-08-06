@@ -1,9 +1,9 @@
 import React, { useCallback, useMemo } from 'react'
 import styled from 'styled-components'
-import Box from '../../../components/layout/Box'
-import Flex from '../../../components/layout/Flex'
-import Dropzone from '../../../components/molecules/Dropzone'
-import ImagePreview from '../../../components/molecules/ImagePreview'
+import Box from 'components/layout/Box'
+import Flex from 'components/layout/Flex'
+import Dropzone from 'components/molecules/Dropzone'
+import ImagePreview from 'components/molecules/ImagePreview'
 
 const InputImagesContainer = styled(Flex)`
   & > *:not(:first-child) {

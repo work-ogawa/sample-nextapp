@@ -1,48 +1,37 @@
-/* eslint-disabled prettier/prettier */
+/* eslint-disable prettier/prettier */
 import styled from 'styled-components'
-import Box, { BoxProps } from '../../../components/layout/Box'
+import Box, { BoxProps } from 'components/layout/Box'
 import type {
-    Responsive,
-    CSSPropertyAlignItems,
-    CSSPropertyAlignContent,
-    CSSPropertyJustifyItems,
-    CSSPropertyFlexDirection,
-    CSSPropertyJustifySelf,
-    CSSPropertyFlexWrap,
-    CSSPropertyAlignSelf, CSSPropertyJustifyContent
-} from "../../../types/styles";
-import { toPropValue } from '../../../utils/styles'
+  Responsive,
+  CSSPropertyAlignItems,
+  CSSPropertyAlignContent,
+  CSSPropertyJustifyContent,
+  CSSPropertyJustifyItems,
+  CSSPropertyFlexDirection,
+  CSSPropertyJustifySelf,
+  CSSPropertyFlexWrap,
+  CSSPropertyAlignSelf,
+} from 'types/styles'
+import { toPropValue } from 'utils/styles'
 
 type FlexProps = BoxProps & {
-    alignItems?: Responsive<CSSPropertyAlignItems>
-    alignContent?: Responsive<CSSPropertyAlignContent>
-    justifyContent?: Responsive<CSSPropertyJustifyContent>
-    justifyItems?: Responsive<CSSPropertyJustifyItems>
-    flexWrap?: Responsive<CSSPropertyFlexWrap>
-    flexBasis?: Responsive<string>
-    flexDirection?: Responsive<string>
-    flexGrow?: Responsive<string>
-    flexShrink?: Responsive<string>
-    justifySelf?: Responsive<CSSPropertyJustifySelf>
-    alignSelf?: Responsive<CSSPropertyAlignSelf>
-    order?: Responsive<string>
+  alignItems?: Responsive<CSSPropertyAlignItems>
+  alignContent?: Responsive<CSSPropertyAlignContent>
+  justifyContent?: Responsive<CSSPropertyJustifyContent>
+  justifyItems?: Responsive<CSSPropertyJustifyItems>
+  flexWrap?: Responsive<CSSPropertyFlexWrap>
+  flexBasis?: Responsive<string>
+  flexDirection?: Responsive<CSSPropertyFlexDirection>
+  flexGrow?: Responsive<string>
+  flexShrink?: Responsive<string>
+  justifySelf?: Responsive<CSSPropertyJustifySelf>
+  alignSelf?: Responsive<CSSPropertyAlignSelf>
+  order?: Responsive<string>
 }
 
 /**
  * Flexコンポーネント
  * flexboxの実現に利用する
- * 実装例: ChildComponentをspace-betweenで並べる
- * <Flex justifyContent="space-between">
- *  <ChildComponent>
- *  <ChildComponent>
- *  <ChildComponent>
- * </Flex>
- * ChildComponentを縦方向にcenterで並べる
- * <Flex justifyContent="center" flexDirection="column">
- *   <ChildComponent>
- *   <ChildComponent>
- *   <ChildComponent>
- * </Flex>
  */
 const Flex = styled(Box)<FlexProps>`
   ${(props) => toPropValue('align-items', props.alignItems, props.theme)}
@@ -60,8 +49,7 @@ const Flex = styled(Box)<FlexProps>`
 `
 
 Flex.defaultProps = {
-    display: 'flex',
+  display: 'flex',
 }
 
 export default Flex
-

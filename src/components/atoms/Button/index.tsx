@@ -2,96 +2,96 @@
 import styled from 'styled-components'
 import { Responsive } from 'types'
 import {
-    toPropValue,
-    Color,
-    FontSize,
-    LetterSpacing,
-    LineHeight,
-    Space,
-} from '../../../utils/styles'
+  toPropValue,
+  Color,
+  FontSize,
+  LetterSpacing,
+  LineHeight,
+  Space,
+} from 'utils/styles'
 
 // ボタンのバリアント
 export type ButtonVariant = 'primary' | 'secondary' | 'danger'
 
 export type ButtonProps = React.ButtonHTMLAttributes<HTMLButtonElement> & {
-    variant?: ButtonVariant
-    fontSize?: Responsive<FontSize>
-    fontWeight?: Responsive<string>
-    letterSpacing?: Responsive<LetterSpacing>
-    lineHeight?: Responsive<LineHeight>
-    textAlign?: Responsive<string>
-    color?: Responsive<Color>
-    backgroundColor?: Responsive<Color>
-    width?: Responsive<string>
-    height?: Responsive<string>
-    minWidth?: Responsive<string>
-    minHeight?: Responsive<string>
-    display?: Responsive<string>
-    border?: Responsive<string>
-    overflow?: Responsive<string>
-    margin?: Responsive<Space>
-    marginTop?: Responsive<Space>
-    marginRight?: Responsive<Space>
-    marginBottom?: Responsive<Space>
-    marginLeft?: Responsive<Space>
-    padding?: Responsive<Space>
-    paddingTop?: Responsive<Space>
-    paddingRight?: Responsive<Space>
-    paddingBottom?: Responsive<Space>
-    paddingLeft?: Responsive<Space>
-    pseudoClass?: {
-        hover?: {
-            backgroundColor?: Responsive<Color>
-        }
-        disabled?: {
-            backgroundColor?: Responsive<Color>
-        }
+  variant?: ButtonVariant
+  fontSize?: Responsive<FontSize>
+  fontWeight?: Responsive<string>
+  letterSpacing?: Responsive<LetterSpacing>
+  lineHeight?: Responsive<LineHeight>
+  textAlign?: Responsive<string>
+  color?: Responsive<Color>
+  backgroundColor?: Responsive<Color>
+  width?: Responsive<string>
+  height?: Responsive<string>
+  minWidth?: Responsive<string>
+  minHeight?: Responsive<string>
+  display?: Responsive<string>
+  border?: Responsive<string>
+  overflow?: Responsive<string>
+  margin?: Responsive<Space>
+  marginTop?: Responsive<Space>
+  marginRight?: Responsive<Space>
+  marginBottom?: Responsive<Space>
+  marginLeft?: Responsive<Space>
+  padding?: Responsive<Space>
+  paddingTop?: Responsive<Space>
+  paddingRight?: Responsive<Space>
+  paddingBottom?: Responsive<Space>
+  paddingLeft?: Responsive<Space>
+  pseudoClass?: {
+    hover?: {
+      backgroundColor?: Responsive<Color>
     }
+    disabled?: {
+      backgroundColor?: Responsive<Color>
+    }
+  }
 }
 
 const variants = {
-    // プライマリ
-    primary: {
-        color: 'white',
+  // プライマリ
+  primary: {
+    color: 'white',
+    backgroundColor: 'primary',
+    border: 'none',
+    pseudoClass: {
+      hover: {
+        backgroundColor: 'primaryDark',
+      },
+      disabled: {
         backgroundColor: 'primary',
-        border: 'none',
-        pseudoClass: {
-            hover: {
-                backgroundColor: 'primaryDark',
-            },
-            disabled: {
-                backgroundColor: 'primary',
-            },
-        },
+      },
     },
-    // セカンダリ
-    secondary: {
-        color: 'white',
+  },
+  // セカンダリ
+  secondary: {
+    color: 'white',
+    backgroundColor: 'secondary',
+    border: 'none',
+    pseudoClass: {
+      hover: {
+        backgroundColor: 'secondaryDark',
+      },
+      disabled: {
         backgroundColor: 'secondary',
-        border: 'none',
-        pseudoClass: {
-            hover: {
-                backgroundColor: 'secondaryDark',
-            },
-            disabled: {
-                backgroundColor: 'secondary',
-            },
-        },
+      },
     },
-    // デンジャー
-    danger: {
-        color: 'white',
+  },
+  // デンジャー
+  danger: {
+    color: 'white',
+    backgroundColor: 'danger',
+    border: 'none',
+    pseudoClass: {
+      hover: {
+        backgroundColor: 'dangerDark',
+      },
+      disabled: {
         backgroundColor: 'danger',
-        border: 'none',
-        pseudoClass: {
-            hover: {
-                backgroundColor: 'dangerDark',
-            },
-            disabled: {
-                backgroundColor: 'danger',
-            },
-        },
+      },
     },
+  },
 }
 
 /**
@@ -104,35 +104,35 @@ const Button = styled.button<ButtonProps>`
     if (variant && variants[variant]) {
       const styles = []
       !color &&
-      styles.push(toPropValue('color', variants[variant].color, theme))
+        styles.push(toPropValue('color', variants[variant].color, theme))
       !backgroundColor &&
-      styles.push(
-              toPropValue(
-                      'background-color',
-                      variants[variant].backgroundColor,
-                      theme,
-              ),
-      )
+        styles.push(
+          toPropValue(
+            'background-color',
+            variants[variant].backgroundColor,
+            theme,
+          ),
+        )
       !pseudoClass &&
-      styles.push(
-              `&:hover {
+        styles.push(
+          `&:hover {
             ${toPropValue(
-                      'background-color',
-                      variants[variant].pseudoClass.hover.backgroundColor,
-                      theme,
-              )}
+              'background-color',
+              variants[variant].pseudoClass.hover.backgroundColor,
+              theme,
+            )}
           }`.replaceAll('\n', ''),
-      )
+        )
       !pseudoClass &&
-      styles.push(
-              `&:disabled {
+        styles.push(
+          `&:disabled {
             ${toPropValue(
-                      'background-color',
-                      variants[variant].pseudoClass.disabled.backgroundColor,
-                      theme,
-              )}
+              'background-color',
+              variants[variant].pseudoClass.disabled.backgroundColor,
+              theme,
+            )}
           }`.replaceAll('\n', ''),
-      )
+        )
       return styles.join('\n')
     }
   }}
@@ -160,17 +160,17 @@ const Button = styled.button<ButtonProps>`
   ${(props) => toPropValue('padding-right', props.paddingRight, props.theme)}
   &:hover {
     ${(props) =>
-            toPropValue(
-                    'background-color',
-                    props?.pseudoClass?.hover?.backgroundColor,
-            )}
+      toPropValue(
+        'background-color',
+        props?.pseudoClass?.hover?.backgroundColor,
+      )}
   }
   &:disabled {
     ${(props) =>
-            toPropValue(
-                    'background-color',
-                    props?.pseudoClass?.disabled?.backgroundColor,
-            )}
+      toPropValue(
+        'background-color',
+        props?.pseudoClass?.disabled?.backgroundColor,
+      )}
   }
   cursor: pointer;
   outline: 0;
@@ -181,16 +181,16 @@ const Button = styled.button<ButtonProps>`
 `
 
 Button.defaultProps = {
-    variant: 'primary',
-    paddingLeft: 2,
-    paddingRight: 2,
-    paddingTop: 1,
-    paddingBottom: 1,
-    color: 'white',
-    display: 'inline-block',
-    textAlign: 'center',
-    lineHeight: 'inherit',
-    fontSize: 'inherit',
+  variant: 'primary',
+  paddingLeft: 2,
+  paddingRight: 2,
+  paddingTop: 1,
+  paddingBottom: 1,
+  color: 'white',
+  display: 'inline-block',
+  textAlign: 'center',
+  lineHeight: 'inherit',
+  fontSize: 'inherit',
 }
 
 export default Button

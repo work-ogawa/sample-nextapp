@@ -8,7 +8,7 @@ import {
   FontSize,
   LetterSpacing,
   LineHeight,
-} from '../../../utils/styles'
+} from 'utils/styles'
 
 // テキストバリアント
 export type TextVariant =

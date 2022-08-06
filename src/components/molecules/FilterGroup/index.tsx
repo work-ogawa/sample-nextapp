@@ -1,7 +1,7 @@
 import React, { useCallback, useEffect, useState } from 'react'
-import Text from '../../../components/atoms/Text'
-import Box from '../../../components/layout/Box'
-import CheckBox from '../../../components/molecules/CheckBox'
+import Text from 'components/atoms/Text'
+import Box from 'components/layout/Box'
+import CheckBox from 'components/molecules/CheckBox'
 
 type Item = {
   label: string

@@ -4,7 +4,7 @@ import {
   PersonIcon,
   SearchIcon,
   ShoppingCartIcon,
-} from '../../../components/atoms/IconButton'
+} from 'components/atoms/IconButton'
 
 export default {
   title: 'Molecules/BadgeIconButton',
