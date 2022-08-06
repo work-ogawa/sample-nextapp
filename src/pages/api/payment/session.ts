@@ -1,4 +1,5 @@
 /* eslint-disable prettier/prettier */
+/* eslint @typescript-eslint/no-var-requires: "off" */
 import { NextApiRequest, NextApiResponse } from "next";
 const stripe = require('stripe')('')
 
