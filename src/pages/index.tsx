@@ -113,7 +113,6 @@ export const getStaticProps: GetStaticProps = async () => {
   const context: ApiContext = {
     apiRootUrl: process.env.API_BASE_URL || 'http://localhost:5000',
   }
-  console.log("getStaticProps内で呼ばれたログ.");
   // 各商品のトップ6個を取得し、静的ページを作成
   // 60秒でrevalidateな状態にし、静的ページを更新する
   const [clothesProducts, bookProducts, shoesProducts] = await Promise.all([
