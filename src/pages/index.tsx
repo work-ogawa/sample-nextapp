@@ -9,7 +9,6 @@ import Layout from 'components/templates/Layout'
 import getAllProducts from 'services/products/get-all-products'
 import { ApiContext, Product } from 'types'
 
-
 type HomePageProps = InferGetStaticPropsType<typeof getStaticProps>
 
 const HomePage: NextPage<HomePageProps> = ({
